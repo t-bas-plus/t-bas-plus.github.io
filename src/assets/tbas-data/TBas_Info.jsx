@@ -2,6 +2,12 @@ import tw from "twin.macro";
 
 import { HiddenBrLgXl, HiddenBr, HiddenBrSm, HiddenBrMd, HiddenBrLg, HiddenBrXl, HiddenBr_BreakPoint, HiddenBr_BreakPoint2, HiddenBr_BreakPoint3, HiddenBr_BreakPoint4, HightlightedText} from "assets/styles/TailwindComponents.jsx";
 
+import teachImage1 from "assets/tbas-images/home/teach-1.png";
+import teachImage2 from "assets/tbas-images/home/teach-2.png";
+
+import highSchool from "assets/tbas-images/home/textbook-1.png";
+import middleSchool from "assets/tbas-images/home/textbook-2.png";
+
 import skill1 from "assets/tbas-images/home/HP_01.svg";
 import skill2 from "assets/tbas-images/home/HP_02.svg";
 import skill3 from "assets/tbas-images/home/HP_03.svg";
@@ -23,16 +29,16 @@ import hand from "assets/tbas-images/courses/hand.jpeg";
 
 export const header_footer = [
   {
-    links: ["T-BASとは", "授業について", "対面レッスン", "オンラインレッスン", "講師紹介", "ご利用者の声", "FAQ", "アクセス", "講師募集申込み", "体験レッスン・入塾相談", "体験レッスン・入塾相談"],
-    endpoints:["aboutTbas", "inPerson", "online", "tutors", "feedback", "faq", "access", "apply", "contact"],
+    links: ["T-BASとは", "授業について", "講師紹介", "アクセス",  "お問い合わせ"],
+    endpoints:["aboutTbas", "curriculum", "tutors", "access", "contact"],
     address: (<>〒194-0041 東京都町田市玉川学園 <HiddenBr_BreakPoint2/>2-11-22高橋ビル301</>),
     phone: "TEL/FAX：042-851-8680",
     hours: "電話受付時間：15:00-19:00",
     email: "メール：tbastamagawa@gmail.com"
   },
   {
-    links: ["About T-BAS", "Courses", "In Person", "Online", "Teachers", "Feedback", "FAQ", "Access", "Become a Teacher", (<>Trial Lesson <br/> and Consultation</>), "Trial Lesson and Consultation"],
-    endpoints:["aboutTbas", "inPerson", "online", "tutors", "feedback", "faq", "access", "apply", "contact"],
+    links: ["About T-BAS", "Curriculum", "Teachers", "Access", "Contact Us"],
+    endpoints:["aboutTbas", "curriculum", "tutors", "access", "contact"],
     address: (<>〒194-0041 東京都町田市玉川学園 <HiddenBr_BreakPoint2/>2-11-22高橋ビル301</>),
     phone: "TEL/FAX：042-851-8680",
     hours: "Hours：15:00-19:00",
@@ -44,14 +50,41 @@ export const home_hero = [
   {
     Heading:(
       <>
-        IB学習サポートなら
-        <HiddenBrSm/>
-        T-BAS玉川学園へ。
+        T-BAS Plus
       </>
     ),
     Paragraph:(
       <>
-        IBディプロマを取得した講師たちが教える信頼の塾
+        一人ひとりに丁寧に向き合う、<HiddenBr/>数学の個別指導塾
+      </>
+    )
+  },
+  {
+    Heading:(
+      <>
+        For IB learning support,
+        <br/>
+        go to T-BAS.
+      </>
+    ),
+    Paragraph:(
+      <>
+        A trusted tutoring center taught by <HiddenBr />instructors who have obtained the IB Diploma.
+      </>
+    )
+  }
+];
+
+export const home_hero_desc = [
+  {
+    Heading:(
+      <>
+        T-BAS Plus
+      </>
+    ),
+    Paragraph:(
+      <>
+        一人ひとりに丁寧に向き合う、数学の個別指導塾
       </>
     )
   },
@@ -73,85 +106,42 @@ export const home_hero = [
 
 export const home_concerns = [
   {
-    Heading:[ "このような", "お悩み", "はありませんか？" ],
-    Skills:[
-      <>
-        家庭教師だけ
-        <br/>
-        では不安だ
-      </>,
-      <>
-        子供の学習状況が
-        <br/>
-        さっぱり分からない
-      </>,
-      <>
-        IB学習をサポート
-        <br/>
-        してくれるピッタリな
-        <br/>
-        塾が見つからない
-      </>,
-      <>
-        親が勉強を見れなくて
-        <br/>
-        困っている
-      </>,
-      <>
-        オンラインで
-        <br/>
-        習っていたが
-        <br/>
-        成績が上がらなかった
-      </>
-    ],
-    Subheading:[
+    Heading:[
       "玉川学園前駅徒歩1分！", 
-      (<>IB専門塾の「T-BAS玉川学園」に<HiddenBr/>お任せください！</>)
+      "中学生・高校生向けの", 
+      "1対1の個別指導塾のT-Bas Plusへ！"
     ]
   },
   {
-    Heading:[ "Do you have any of these", " concerns?" ],
-    Skills:[
-      <>
-        I feel worried with
-        <br/>
-        just a private tutor
-      </>,
-      <>
-        I have no idea about
-        <br/>
-        my child's learning progress
-      </>,
-      <>
-        I can't find the perfect 
-        <br/>
-        tutoring center that
-        <br/>
-        supports the IB curriculum
-      </>,
-      <>
-        Parents struggle because they
-        <br/>
-        can't help with the child's studies.
-      </>,
-      <>
-        I was learning online, 
-        <br/>
-        but my grades didn’t improve
-      </>
-    ],
-    Subheading:[
-      "1-minute walk from Tamagawa Gakuenmae Station！", 
-      (<>Leave it to T-BAS, the<HiddenBr/>IB specialized tutoring center!</>)
+    Heading:[
+      "玉川学園前駅徒歩1分！", 
+      "中学生・高校生向けの", 
+      "1対1の個別指導塾のT-Bas Plusへ！"
     ]
   }
 ];
 
 export const home_trialLessons = [
   {
-    Heading: [ "今なら", "3300円", "で", "体験レッスン受付中！" ],
+    Heading: [ "今なら", "60分3300円", "で", "体験レッスン受付中！" ],
     Subheading: "お気軽にご相談ください！",
+    ActionButton: "電話: 0428-51-8680"
+  },
+  {
+    Heading: [ "You can now do trial lessons for ", "3,300 yen!" ],
+    Subheading: "Feel free to reach out！",
+    ActionButton: "Contact Us!"
+  }
+];
+
+export const home_features = [
+  {
+    Heading:[
+      "玉川学園前駅徒歩1分！", 
+      "中学生・高校生向けの", 
+      "1対1の個別指導塾のT-Bas Plusへ！"
+    ],
+    Heading2: [ "数学に不安がある方も、基礎から見直したい方も、", "落ち着いて学べる環境で、じっくり着実に力をつけていきます。" ],
     ActionButton: "お問い合わせ・相談"
   },
   {
@@ -163,34 +153,29 @@ export const home_trialLessons = [
 
 export const home_keyAspects = [
   {
-    Heading: "T-BASの特徴",
+    Heading: "T-BAS Plusの特徴",
     KeyAspects:[
       {
-        SubHeading: "マンツーマン授業",
+        SubHeading: "一緒に「つまずき」を探して解決します",
         Description: (<>
-          生徒1人1人に寄り添い、最大限に効果を
+          生徒が「どこで引っかかっているのか」を丁寧に見つけ、少しずつ理解を積み重ねていきます。
           <HiddenBrSm />
-          発揮できる1対1の授業をご提供。
+          「こんなこと聞いてもいいのかな？」
+          <HiddenBrSm />
+          そんな心配をしなくて良い、楽しく落ち着いた雰囲気を大切にしています。
         </>),
-        ImageUrl: skill1
+        ImageUrl: teachImage1
       },
       {
-        SubHeading: "対面・オンライン対応",
+        SubHeading: "完全一対一で、じっくり学べる",
         Description: (<>
-          学校帰りや土日に教室でレッスン。
+          生徒のペースに合わせて進めます。
           <HiddenBrSm />
-          ご自宅でのオンラインレッスンもご提供。
-        </>),
-        ImageUrl: skill2
-      },
-      {
-        SubHeading: "3つのコース",
-        Description: (<>
-          Pre-MYPコース、MYPコース、DPコースの
+          テンポを速めたり、ゆっくり確認したり、
           <HiddenBrSm />
-          ３つのコースをご提供。
+          その日の理解度に合わせて柔軟に対応します。
         </>),
-        ImageUrl: skill3
+        ImageUrl: teachImage2
       }
     ]
   },
@@ -243,46 +228,50 @@ export const startJourneyInfo = [
 export const courseInfo = [
   {
     Heading: "コース紹介",
+    PriceHeading: "【月謝料金表】",
+    PriceKeyNote: [
+      "※週の時間数によってご料金が異なります",
+      "※月４時間以上でお好きな回数や時間数で決められます",
+      "※数学検定の指導も対応可能です"
+    ],
     Courses:[
       {
-        SubHeading: "Pre-MYP",
+        SubHeading: "中学生",
         Features: [
-          "EP5年生対象(入塾選抜あり）",
-          (<>
-            ６年生から始まる
-            <HiddenBrSm />
-            MYPスキルの先取り学習
-          </>),
-          (<>
-            学校の学習に余裕のある
-            <HiddenBrSm />
-            お子様限定
-          </>)
+          "基礎力アップ",
+          "学校フォロー",
+          "テスト対策"
+        ],
+        ImageUrl: middleSchool,
+        PriceTable: [
+          {
+            stdPriceHeading: "60分",
+            stdPrice: "¥6,200"
+          },
+          {
+            stdPriceHeading: "90分",
+            stdPrice: "¥9,300"
+          }
         ]
       },
       {
-        SubHeading: "MYP",
+        SubHeading: "高校生",
+        SubHeading2: "(文系、受験対策)",
         Features: [
-          (<>
-            成績アップのスキルを
-            <HiddenBrSm />
-            徹底指導
-          </>),
-          "手厚いトータルサポート",
-          "DPで通用する力をつける"
-        ]
-      },
-      {
-        SubHeading: "DP",
-        Features: [
-          "DP学習＆生活サポート",
-          "DP試験対策指導",
-          "EEやIAのサポート",
-          (<>
-            大学入試アドバイス＆
-            <HiddenBrSm />
-            志願書エッセイ指導
-          </>)
+          "基礎力アップ",
+          "学校フォロー",
+          "テスト対策"
+        ],
+        ImageUrl: highSchool,
+        PriceTable: [
+          {
+            stdPriceHeading: "60分",
+            stdPrice: "¥6,900"
+          },
+          {
+            stdPriceHeading: "90分",
+            stdPrice: "¥10,350"
+          }
         ]
       }
     ],
@@ -452,159 +441,38 @@ export const testimonials = [
 
 export const tutors_list = [
   {
-    heading: "講師紹介(一部掲載)",
-    eduHeading: "経歴：",
-    subHeading: "担当科目：",
+    heading: "講師紹介",
+    expHeading: "経験：",
     comHeading: "コメント：",
+    parentHeading: "保護者の方へ：",
     tutors: [
       {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "上智大学経済学部",
-          "玉川IB卒（IBDP取得済）"
+        name: "溝口講師",
+        gender: "Female",
+        experience: [
+          "学習塾での講師経験",
+          "家庭教師としての個別指導",
+          "某通信教育の添削指導"
         ],
         subjects: [
           "Pre-MYP", "MYP", "DP"
         ],
-        comment: "私は英語が決して得意ではなかった状態でIBコースに進学しましたが、最終的にはDPスコアをしっかりと取得することができました。この経験が生徒さんのIBライフに役立てられるよう、お手伝いさせていただければと思います。私個人的な意見ではありますが、英語ができなくてもIBは努力次第で自分自身の成長とともにしっかりと結果を出すことができます！"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "トロント大学コンピューターサイエンス学部",
-          "玉川IB卒（IBDP取得済）",
-          "ニュージーランド留学経験あり"
-        ],
-        subjects: [
-          "Chem(SL)", "Econ(SL)", "Math(HL)", "Phy(SL)"
-        ],
-        comment: "こんにちは。IBを経験し、勉学だけではなく色々なことを学んだので 勉強に限らず試験のコツや心持ちなどのアドバイスができればと考えています。 自分の得意科目は数学で、math HLを取っていました。IBは辛いかもしれませんが一緒に頑張りましょう！"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "テンプル大学教養学部政治学科",
-          "玉川IB卒（IBDP取得済）"
-        ],
-        subjects: [
-          "Art", "CASのサポート等", "EE","TOK", "Pre-MYP", "MYP" 
-        ],
-        comment: "テンプルジャパンキャンパスに進学し、現在は国際教養と政治学を専攻しています。T-BASでの講師歴は今年で3年目になるので、主にMYP生を担当していますが文系や理数系関係なく多岐に渡って生徒をサポートしています。DP生は主に美術やCAS、EE、TOKなどの指導を中心としています。当塾には経験と知識が豊富な講師陣がお待ちしております。どうぞ一度体験レッスンにお越しください。"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "国際基督教大学",
-          "玉川IB卒（IBDP取得済）"
-        ],
-        subjects: [
-          "Pre-MYP", "MYP", "DP", "Econ(HL)", "MathAA(SL)"
-        ],
-        comment: "I&Sやeconomicsの社会科目を得意としております。ただ答えを教えるのではなく、ひとりひとりの理解力を引き出すような、IBらしい指導を心がけています。その場その場の課題だけでなく、MYP、DPの過程とその先を考慮して学習をサポートしていきます！"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "早稲田大学国際教養学部",
-          "玉川IB卒（IBDP取得済）"
-        ],
-        subjects: [
-          "Pre-MYP", "MYP", "DP", "Econ(HL)", "MathAA(SL)"
-        ],
-        comment: "英語のスキルがゼロに近いところからMYPに入り言語の壁や課題に苦戦しましたが、試行錯誤を繰り返したIBの生活はとても充実していて成長できたと感じています。IBで培ったスキルや経験を生かして、英語の勉強や日々の学習をサポートできるように努めてまいります。T-BASで皆さんにお会いできることを楽しみにしております。"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "慶應義塾大学総合政策学部GIGAプログラム",
-          "玉川IB卒（IBDP取得済）",
-          "オーストラリア留学経験あり"
-        ],
-        subjects: [
-           "Pre-MYP", "MYP","DP","JapaneseA(HL)", "Math(MYP)", "History(HL)"
-        ],
-        comment: "僕は海外経験がないままMYPに入りましたが、日々の勉強や留学を通して英語力の成長を実感してきました。 日々の学習サポートに加えて、推薦入試のアドバイスや英検対策など、IBで培った経験を存分に活かせるように頑張りますのでどうぞよろしくお願いします。"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "トロント大学エンジニアリングサイエンス",
-          "玉川IB卒（IBDP取得済）"
-        ],
-        subjects: [
-          "MathAA(HL)", "Phy(HL)", "Chem(SL)"
-        ],
-        comment: "トロント大学の応用科学と工学部のEngineering Scienceというプログラムで航空宇宙工学科を専攻しております。生物学を除く全ての理系科目において、直感的に理論を説明するアプローチを用い、出来る限り楽しい授業をしていきます！よろしくお願いいたします。"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "エディンバラ大学英文学科",
-          "玉川IB卒（IBDP取得済）",
-          "イギリス留学経験あり"
-        ],
-        subjects: [
-          "Core科目", "EnglishA/B",  "History", "I＆S", "JapaneseA/B", "MYP", "DP"
-        ],
-        comment: "慶應義塾大学文学部に進学後、現在はエディンバラ大学で英文学を専攻しています。 英語と国語を中心に、幅広い年齢層の生徒を教えることができます。また、国内受験・海外受験 ともに豊富な知識を持っています。体験授業でお待ちしております！"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "上智大学法学部国際関係法学科",
-          "海外IB卒(IBDP取得済)"
-        ],
-        subjects: [
-           "Pre-MYP", "MYP", "DP", "MathAA(SL)", "Chem(SL)"
-        ],
-        comment: "こんにちは！私は海外のIBディプロマを取得しました。そこで学んだ経験を活かし、勉学のみならず海外入試や進学後の生活などの面でも生徒さん達をサポートできます。どうぞよろしくお願いします。"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "ハワイ大学",
-          " 玉川IB卒（IBDP取得済）"
-        ],
-        subjects: [
-         "MYP", "DP","Biology", "English A",  "History", "Japanese", "Math(AI)"
-        ],
-        comment: "私は英語と日本語のバイリンガルで、IBのMYPおよびDPプログラムを卒業しました。皆さんに教えることを楽しみにしています。質問があれば、何でも気軽に聞いてください！"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "国際基督教大学",
-          "玉川IB卒（IBDP取得済）"
-        ],
-        subjects: [
-          "MYP", "DP", "Bio(HL)", "Econ(HL)", "Math(AI)"
-        ],
-        comment: "中学1年の頃に英検5級に落ちたほどの英語力だった私ですが、最後はDPをそれなりの成績で修めることができました。英語力の高い海外経験豊富な生徒に囲まれながら何度IBを辞めようと思った事でしょうか。しかし、最後まで諦めずに続けて良かったと思っています。努力すれば結果が付いてくる時代は必ず訪れます。その結果を少しでも良くするお手伝いをさせていただければと思いますので、一緒に頑張りましょう！"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "上智大学法学部国際関係法学科",
-          "開智日本橋高校IB卒（IBDP取得済）"
-        ],
-        subjects: [
-         "Pre-MYP", "MYP", "DP", "MathAA(SL)", "Business", "Geography"
-        ],
-        comment: "こんにちは！僕は生徒さんに寄り添い、勉強が苦にならないよう楽しく授業するのがモットーです！よろしくお願いいたします！"
-      },
-      
+        comments: (
+          <>
+          T-BAS Plus 代表の溝口です。50代・女性講師です。<br/>
+          これまで、学習塾での講師経験、家庭教師としての個別指導、某通信教育の添削指導を通して、たくさんの生徒さんと向き合ってきました。
+          一人ひとりのペースを大切にして、「分かる！」「出来る！」という気持ちを丁寧に積み重ねていく指導を心がけています。<br/><br/>
+          数学に不安がある生徒さんも、基礎からゆっくり確認したい生徒さんも、安心して質問できる雰囲気づくりを大切にしています。
+          落ち着いて学べる環境で、着実に理解を深めていくお手伝いができれば幸いです。
+          </>
+        ),
+        parentComments: (
+          <>
+          T-BAS Plus は、じっくりと、着実に、理解を深められる場所を目指しています。<br/>
+          「わからない」を一緒に解決して、ご家庭でも安心して見守れるような学習の流れを作ります。
+          </>
+        )
+      }
     ]
   },
   {
@@ -624,144 +492,6 @@ export const tutors_list = [
           "Pre-MYP", "MYP", "DP"
         ],
         comment: "I entered the IB course without being particularly good at English, but ultimately I was able to achieve a solid DP score. I hope to use this experience to help students in their IB lives. In my personal opinion, even if you struggle with English, you can achieve great results in the IB with effort and personal growth!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "University of Toronto,faculty of computer science",
-          "Tamagawa IB graduate (IBDP obtained)",
-          "Experience studying abroad in New Zealand"
-        ],
-        subjects: [
-          "Chem(SL)", "Econ(SL)", "Math(HL)", "Phy(SL)"
-        ],
-        comment: "Hello. Having experienced the IB program, I learned a lot not only academically but also in various other aspects, so I hope to provide advice on exam strategies and mindset beyond just studying. My strong subject is mathematics, and I took Math HL. The IB may be challenging, but let's work hard together!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "Temple University",
-          "Tamagawa IB graduate (IBDP obtained)"
-        ],
-        subjects: [
-          "Art", "CAS Support", "EE", "TOK", "Pre-MYP", "MYP"
-        ],
-        comment: "I entered the Temple University Japan Campus and am currently majoring in International Studies and Political Science. This year marks my third year as an instructor at T-BAS, where I primarily support MYP students but also assist students across various subjects, whether in the humanities or sciences. For DP students, I mainly focus on guidance in art, CAS, EE, and TOK. Our tutoring center has a team of instructors with rich experience and knowledge waiting for you. Please feel free to come for a trial lesson."
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "International Christian University.",
-          "Tamagawa IB graduate (IBDP obtained)"
-        ],
-        subjects: [
-          "Pre-MYP", "MYP", "DP", "Econ(HL)", "MathAA(SL)"
-        ],
-        comment: "I excel in subjects like I&S and economics. Rather than simply providing answers, I focus on drawing out each student's understanding in a way that reflects the IB philosophy. I aim to support learning not only for the tasks at hand but also with consideration for the MYP, DP, and beyond!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "Waseda University, School of International Liberal Studies",
-          "Tamagawa IB graduate (IBDP obtained)"
-        ],
-        subjects: [
-          "Pre-MYP", "MYP", "DP", "Econ(HL)", "MathAA(SL)"
-        ],
-        comment: "I entered the MYP with almost zero English skills and struggled with the language barrier and various challenges.However,through trial and error,my experience in the IB program was very fulfilling and I feel that I was able to grow.I am committed to utilizing the skills and experience I gained in the IB to support others in their English learning and daily studies.I look forward to meeting everyone at T-BAS. "
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "Keio University, Faculty of Policy Management",
-          "Tamagawa IB graduate (IBDP obtained)",
-          "Studied abroad in Australia"
-        ],
-        subjects: [
-          "Pre-MYP", "MYP", "DP", "History(HL)",  "JapaneseA(HL)", "Math(MYP)"
-        ],
-        comment: "I entered the MYP without any overseas experience, but I have felt my English skills grow through daily studies and studying abroad. In addition to daily learning support, I will do my best to utilize my experiences from the IB for recommendations and English proficiency exam preparation. I look forward to working with you!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "University of Toronto,Faculty of engineering science",
-          "Tamagawa IB graduate (IBDP obtained)",
-        ],
-        subjects: [
-          "MathAA(HL)", "Phy(HL)", "Chem(SL)"
-        ],
-        comment: "I am majoring in Aerospace Engineering within the Engineering Science program at the Faculty of Applied Science and Engineering at the University of Toronto. I use an intuitive approach to explain theories in all STEM subjects except biology, aiming to make my classes as enjoyable as possible! I look forward to working with you!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "University of Edinburgh",
-          "Tamagawa IB graduate (IBDP obtained)",
-          "Studied abroad in the UK"
-        ],
-        subjects: [
-          "Core", "EnglishA/B",  "History", "I＆S", "JapaneseA/B", "MYP", "DP"
-        ],
-        comment: "After advancing to the Faculty of Letters at Keio University, I am now majoring in English Literature at the University of Edinburgh. I can teach a wide range of students, focusing on English and Japanese. I also have extensive knowledge of both domestic and overseas entrance exams. I look forward to seeing you in a trial lesson!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "Sophia University, Faculty of Law",
-          "Graduated from an overseas IB program (IBDP completed)"
-        ],
-        subjects: [
-           "Pre-MYP", "MYP", "DP", "MathAA(SL)", "Chem(SL)"
-        ],
-        comment: "Hello! I obtained my IB Diploma overseas. I can use my experiences to support students not only in their studies but also with overseas entrance exams and life after advancing to university. I look forward to working with you!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Female",
-        education: [
-          "University of Hawaii",
-          "Tamagawa IB graduate (IBDP obtained)"        
-        ],
-        subjects: [
-           "MYP",  "DP", "Biology", "English A",  "History", "Japanese", "Math(AI)"
-        ],
-        comment: "I’m bilingual in English and Japanese and a graduate of the IB MYP and DP program. I look forward to teaching all of you. If you have any questions, feel free to ask me anything!!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "International Christian University (ICU)",
-          "Tamagawa IB graduate (IBDP obtained)"
-        ],
-        subjects: [
-          "MYP", "DP", "Bio(HL)", "Econ(HL)", "Math(AI)"
-        ],
-        comment: "During my first year of middle school, my English skills were so low that I failed the Eiken Level 5 exam, but in the end, I was able to complete the DP with decent grades. Surrounded by highly skilled students with rich overseas experience, there were many times I thought about quitting the IB. However, I’m glad I persevered until the end. I believe that if you put in the effort, results will eventually come. I hope to help improve those results, so let’s work hard together!"
-      },
-      {
-        name: "Teacher _",
-        gender: "Male",
-        education: [
-          "Sophia University, Faculty of Law",
-          "Graduated from Kaichi Nihonbashi High School with an IB Diploma (IBDP completed)"
-        ],
-        subjects: [
-          "Pre-MYP", "MYP", "DP", "MathAA(SL)", "Business","Geography"
-        ],
-        comment: "Hello! My motto is to support students and make learning enjoyable so that it doesn’t feel burdensome. I look forward to working with you!"
-      },
-      {
-        
       }
     ]
   }
@@ -851,35 +581,33 @@ export const tutors_acceptance = [
 // lessons
 export const lessons = [
   {
-    InPersonHeading: "対面レッスン",
-    OnlineHeading: "オンラインレッスン"
+    InPersonHeading: "授業内容"
   },
   {
-    InPersonHeading: "In-Person Lessons",
-    OnlineHeading: "Online Lessons"
+    InPersonHeading: "In-Person Lessons"
   }
 ];
 
 export const inPerson_WhySelect = [
   {
-    Heading: "選ばれる６つの理由",
+    Heading: "選ばれる理由",
     Reasons:[
       {
         SubHeading: (<>
-          玉川学園IB生に
+          一緒に“つまずき”を
           <br />
-          ぴったりな塾
+          探して解決します
         </>),
-        Description: "T-BASは玉川学園IBに特化した塾です。優秀な玉川学園IBを卒業した講師が沢山在籍しているので、主要科目の勉強だけでないトータルサポートが可能です。海外IBや他校IB卒の優秀な講師も在籍。幅広い指導の提供をしています。",
+        Description: "生徒が「どこで引っかかっているのか」を丁寧に見つけ、少しずつ理解を積み重ねていきます。「こんなこと聞いてもいいのかな？」そんな心配をしなくて良い、楽しく落ち着いた雰囲気を大切にしています",
         ImageUrl: teach1
       },
       {
         SubHeading: (<>
-          マンツーマンの
+          完全1対1で、
           <br />
-          対面レッスン
+          じっくり学べる
         </>),
-        Description: "何と言っても1:1の対面レッスンに勝るものはありません。T-BASではカフェなどと違い学習環境の整った教室で集中してレッスンが出来ますので自信を持ってお勧めします。",
+        Description: "生徒のペースに合わせて進めます。テンポを速めたり、ゆっくり確認したり、その日の理解度に合わせて柔軟に対応します。",
         ImageUrl: teach2
       },
       {
@@ -895,28 +623,12 @@ export const inPerson_WhySelect = [
       },
       {
         SubHeading: (<>
-          分からないことが
-          <br />
-          分かるようになって
-          <br />
-          やる気がアップ！
-        </>),
-        Description: "T-BASでは英語だけでなく日本語も使って分からないことを分かるまで丁寧にレッスンします。また、IB生に必要なタイムマネージメントの力もつけていきます。課題は時間をかけて質の高いものを作り上げるように意識を高めていきます。",
-        ImageUrl: inPerson1
-      },
-      {
-        SubHeading: (<>
           サポートが
           <br />
           すごい！
         </>),
-        Description: "T-BASは塾長がいるので、生徒も保護者も日頃から何でも気軽に相談することが出来ます。自信を持って楽しく学習が出来るようにサポートします。塾長は「保護者＆生徒＆講師」を連携させて質の高い授業を提供するように講師を導きます。また、プレMYP/MYPコースはレッスンの学習報告も閲覧できるので学習状況が分かり保護者も安心です。",
+        Description: "T-BAS Plus は、じっくりと、着実に、理解を深められる場所を目指しています。「わからない」を一緒に解決して、ご家庭でも安心して見守れるような学習の流れを作ります。",
         ImageUrl: inPerson2
-      },
-      {
-        SubHeading: "講師がすごい！",
-        Description: "T-BASの講師はほとんどが早慶上智ICU立教やトロント大学など難関大学に通っています。高いGPAとIBDPハイスコアの成績優秀な講師が在籍しています。彼らは成績を取る方法を熟知しているので是非レッスンでコツを掴んで下さい！",
-        ImageUrl: teachers
       }
     ]
   },

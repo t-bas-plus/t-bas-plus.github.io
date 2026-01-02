@@ -32,6 +32,14 @@ module.exports = {
       white: '#fff',
 
       tbasMain: {
+        blue900: '#212E3F',
+        blue700: '#0C4B6E',
+        blue500: '#375E6F',
+        blue300: '#879EA9',
+        blueBack: '#87AFC7',
+        red900: '#7C2A14',
+        // blue300: '#0C4B6E',
+        
         purple900: '#552F72',
         purple700: '#76578D',
         purple500: '#C8BCD1',
@@ -208,6 +216,7 @@ module.exports = {
       '72': '18rem',
       '80': '20rem',
       '96': '24rem',
+      '104': '26rem',
       '112': '28rem',
       '128': '32rem',
       '144': '36rem',
@@ -221,6 +230,9 @@ module.exports = {
       '272': '68rem',
       '288': '72rem',
       '304': '76rem',
+      '320': '80rem',
+      '336': '84rem',
+      '362': '88rem',
     },
     backgroundColor: theme => theme('colors'),
     backgroundPosition: {

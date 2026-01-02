@@ -27,7 +27,7 @@ const NavLink = tw.a`
   pb-1 border-b-2 border-transparent hover:border-main-lightBlue hocus:text-main-lightBlue
 `;
 
-const Container = tw(ContainerBase)`bg-tbasMain-purple700 text-main-black -mx-8 -mb-8`
+const Container = tw(ContainerBase)`bg-tbasMain-blue700 text-main-black -mx-8 -mb-8`
 const Content = tw.div`max-w-screen-2xl mx-auto md:py-16`;
 
 const Row = tw.div`flex flex-col items-center justify-center`
@@ -50,7 +50,7 @@ const LogoLightText = tw(LogoText)`pt-2 font-light text-base lg:text-lg`;
 
 const SocialLinksContainer = tw.div`mt-6`;
 const SocialLink = styled.a`
-  ${tw`rounded-full p-3 cursor-pointer inline-block bg-main-white text-tbasMain-purple900 hover:text-tbasMain-orange transition duration-300 mx-4`}
+  ${tw`rounded-full p-3 cursor-pointer inline-block bg-main-white text-tbasMain-blue900 hover:text-tbasMain-orange transition duration-300 mx-4`}
   svg {
     ${tw`w-6 md:w-8 h-6 md:h-8`}
   }
@@ -103,14 +103,10 @@ export default function Footer(props) {
   const tbasNavLinks = [
     <NavLinks key = {1}>
       <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[0])}>{currInfo.links[0]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[1])}>{currInfo.links[2]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[2])}>{currInfo.links[3]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[3])}>{currInfo.links[4]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[4])}>{currInfo.links[5]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[5])}>{currInfo.links[6]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[6])}>{currInfo.links[7]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[7])}>{currInfo.links[8]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[8])}>{currInfo.links[10]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[1])}>{currInfo.links[1]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[2])}>{currInfo.links[2]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[3])}>{currInfo.links[3]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[4])}>{currInfo.links[4]}</NavLink>
     </NavLinks>
   ];
 
@@ -121,21 +117,8 @@ export default function Footer(props) {
           <LogoContainer>
             {tbasLogoLink}
           </LogoContainer>
-          {tbasNavLinks}
-          <SocialLinksContainer>
-            {/* <SocialLink href="mailto:tbastamagawa@gmail.com">
-              <MailIcon />
-            </SocialLink> */}
-            <SocialLink href="https://www.instagram.com/tbas_tamagawa?igsh=eDR0OWRlbzd2Ym9t&utm_source=qr" target="_blank">
-              <InstagramIcon />
-            </SocialLink>
-            <SocialLink href="https://lin.ee/Gi1y1hz" target="_blank">
-              <LineIcon />
-            </SocialLink>
-            {/* <SocialLink href="https://twitter.com">
-              <TwitterIcon />
-            </SocialLink> */}
-          </SocialLinksContainer>
+          {/* {tbasNavLinks} */}
+          
         </Row>
       </Content>
     </Container>

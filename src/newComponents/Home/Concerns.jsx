@@ -4,8 +4,8 @@ import styled from "styled-components";
 import {css} from "styled-components/macro"; //eslint-disable-line
 
 /* ========= importing assets ============ */
-import {MainHeading as HeadingTitleTemplate, 
-  MainHeading3 as HeadingTitle3Template,
+import {MainHeading3 as HeadingTitleTemplate, 
+  SubMainHeading as HeadingTitle3Template,
   MainParagraph2 as MainParagraphTemplate,
   Container, ContentFormatted, HiddenBr
 } from "assets/styles/TailwindComponents.jsx";
@@ -19,7 +19,7 @@ import boy from "assets/tbas-images/home/stressed-boy.svg";
 const HeadingTitle = tw(HeadingTitle3Template)`tracking-widest text-main-black`;
 const HeadingRedTitle = tw(HeadingTitleTemplate)`inline tracking-widest text-tbasMain-red`;
 
-const HeadingInfoContainer = tw.div`py-12 flex flex-col items-center bg-tbasMain-purple400 px-8 sm:px-0`;
+const HeadingInfoContainer = tw.div`py-12 flex flex-col items-center bg-tbasMain-purple400 px-8 text-center`;
 const TriangleContainer = tw.div`flex flex-col items-center`;
 
 const Triangle = tw.div`flex justify-center w-0 h-0 
@@ -71,55 +71,24 @@ export default function Concerns(props) {
         ?
         <HeadingTitle tw="pl-8 sm:pl-0">      
           {currInfo.Heading[0]}
+          <br/>
           <HeadingRedTitle>{currInfo.Heading[1]}</HeadingRedTitle>
+          <br/>
+          {currInfo.Heading[2]}
         </HeadingTitle>
         :
         <HeadingTitle>      
           {currInfo.Heading[0]}
+          <br/>
           <HeadingRedTitle>{currInfo.Heading[1]}</HeadingRedTitle>
-          {currInfo.Heading[2][0]}
+          <br/>
+          {currInfo.Heading[2]}
+          {/* {currInfo.Heading[2][0]}
           <HiddenBr/>
-          {currInfo.Heading[2].slice(1)}
+          {currInfo.Heading[2].slice(1)} */}
         </HeadingTitle>
         }
       </HeadingInfoContainer>
-      <TriangleContainer>
-        <Triangle />
-      </TriangleContainer>
-      <Row>
-        <ImageColumn>
-          <Image imageSrc={lady} />
-        </ImageColumn>
-        <ImageColumn>
-          <Image imageSrc={boy} />
-        </ImageColumn>
-        <>
-          <LeftTopContainer>
-            <TextBox>{currInfo.Skills[0]}</TextBox>
-          </LeftTopContainer>
-          <LeftBotContainer>
-            <TextBox>{currInfo.Skills[1]}</TextBox>
-          </LeftBotContainer>
-          <CenterContainer>
-            <TextBox>{currInfo.Skills[2]}</TextBox>
-          </CenterContainer>
-          <RightTopContainer>
-            <TextBox>{currInfo.Skills[3]}</TextBox>
-          </RightTopContainer>
-          <RightBotContainer>
-            <TextBox>{currInfo.Skills[4]}</TextBox>
-          </RightBotContainer>
-        </>
-      </Row>
-      <TriangleContainer tw="bg-tbasMain-purple700 mt-24 pb-16">
-        <WhiteTriangle />
-        <HeadingTitle tw="pt-10 text-center text-main-white">      
-          {currInfo.Subheading[0]}
-        </HeadingTitle>
-        <HeadingTitle tw="pt-4 text-center text-main-white">
-          {currInfo.Subheading[1]}
-        </HeadingTitle>
-      </TriangleContainer>
     </Container>
   );
 };

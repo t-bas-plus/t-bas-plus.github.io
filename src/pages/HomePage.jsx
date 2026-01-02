@@ -2,11 +2,12 @@ import React from 'react';
 
 import Hero from "newComponents/Home/Hero.jsx";
 import Concerns from 'newComponents/Home/Concerns';
-import TrialLesson from 'newComponents/Home/TrialLesson';
+import Features from 'newComponents/Home/Features';
 import KeyAspects from 'newComponents/Home/KeyAspects';
 import CoursePlans from 'newComponents/Home/CoursePlans';
+import Tutor from 'newComponents/Home/Tutor';
 import StartJourneyHero from 'newComponents/Home/StartJourney';
-import TestimonialComponent from "newComponents/Home/Testimonial.jsx";
+import TrialLesson from "newComponents/Home/TrialLesson.jsx";
 import Header from "newComponents/Header/Header.jsx";
 import Footer from "newComponents/Footer/Footer.jsx";
 import SEO from 'Seo.jsx';
@@ -20,12 +21,14 @@ export default function HomePage(props){
         <SEO language = {props.language} url=""/>
         <Header language = {props.language} />
         <Hero language = {props.language}/>
-        <Concerns language = {props.language}/>
-        <TrialLesson language = {props.language}/>
+        <Features language = {props.language}/>
+        {/* <Concerns language = {props.language}/> */}
         <KeyAspects language = {props.language}/>
-        <StartJourneyHero language = {props.language}/>
         <CoursePlans language = {props.language}/>
-        <TestimonialComponent language = {props.language} isHome={true}/>
+        <Tutor language = {props.language}/>
+        <TrialLesson language = {props.language}/>
+        
+        {/* <TestimonialComponent language = {props.language} isHome={true}/> */}
         <Footer language = {props.language}/>
       </AnimationRevealPage>
   );

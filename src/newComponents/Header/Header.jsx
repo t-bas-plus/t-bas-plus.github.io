@@ -33,7 +33,7 @@ const NavLink = tw.a`
   py-2 
   font-semibold tracking-wide transition duration-300
   border-b-2 border-transparent 
-  text-tbasMain-purple900
+  text-tbasMain-blue700
   hocus:text-tbasMain-orange
 `;
 
@@ -41,7 +41,7 @@ const LanguageChangeContainer = tw.div`cursor-pointer w-full m-auto flex justify
 const LanguageChange = tw(NavLink)`text-main-lightBlue flex items-end`
 
 const LogoLink = styled(NavLink)`
-  ${tw`pl-4 pt-4 lg:pl-0 lg:pt-0 cursor-pointer flex items-center`};
+  ${tw`cursor-pointer flex items-center`};
   img {
     ${tw`w-48 sm:w-64 md:w-80 lg:w-48 xl:w-64 2xl:w-80`}
   }
@@ -49,7 +49,7 @@ const LogoLink = styled(NavLink)`
 
 const PrimaryLink = tw(NavLink)`
   lg:mx-0 p-4 lg:mb-2
-  rounded-xl bg-tbasMain-purple900 text-gray-100
+  rounded-xl bg-tbasMain-blue700 text-gray-100
   hocus:bg-tbasMain-orange hocus:text-gray-200 focus:shadow-outline
   border-b-0
 `;
@@ -66,7 +66,7 @@ const MobileNavLinks = motion(styled.div`
 `);
 
 const DesktopNavLinks = tw.nav`
-  hidden lg:flex flex-1 justify-between items-center
+  flex w-full justify-center items-center
 `;
 const LgDesktopNav = tw(DesktopNavLinks)`hidden lg:flex lg:flex-wrap lg:pt-8 lg:px-0 justify-center`;
 
@@ -77,7 +77,7 @@ const DropdownParentText = tw.div`text-sm md:text-base xl:text-lg
 my-2 lg:my-0 py-2 
   font-semibold tracking-wide transition duration-300
   border-b-2 border-transparent 
-  text-tbasMain-purple900
+  text-tbasMain-blue700
   hocus:text-tbasMain-orange`;
 const DropdownParentToggleIcon = styled(motion.span)`
   ${tw`ml-2 transition duration-300`}
@@ -132,41 +132,6 @@ export default function Header(props) {
     </LanguageChangeContainer>
   );
 
-  const coursesDropdown = (
-    <DropdownContainer>
-      <Dropdown onClick={() => setDropdownActive(!dropdownActive)}>
-        <DropdownParent>
-          <DropdownParentText>{currInfo.links[1]}</DropdownParentText>
-          <DropdownParentToggleIcon
-            variants={{
-              collapsed: { rotate: 0 },
-              open: { rotate: -180 }
-            }}
-            initial="collapsed"
-            animate={dropdownActive ? "open" : "collapsed"}
-            transition={{ duration: 0.02, ease: [0.04, 0.62, 0.23, 0.98] }}
-          >
-            <ChevronDownIcon />
-          </DropdownParentToggleIcon>
-        </DropdownParent>
-        <DropdownLinkContainer
-          variants={{
-            open: { opacity: 1, height: "auto", marginTop: "10px", display: "block" },
-            collapsed: { opacity: 0, height: 0, marginTop: "0px", display: "none" }
-          }}
-          initial="collapsed"
-          animate={dropdownActive ? "open" : "collapsed"}
-          transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-        >
-          <DropdownLinks>
-            <DropdownLink onClick={() => navigate(currNavPath+currInfo.endpoints[1])}>{currInfo.links[2]}</DropdownLink>
-            <DropdownLink onClick={() => navigate(currNavPath+currInfo.endpoints[2])}>{currInfo.links[3]}</DropdownLink>
-          </DropdownLinks>
-        </DropdownLinkContainer>
-      </Dropdown>
-    </DropdownContainer>
-  );
-
   const tbasLogoLink = (
     <LogoLink onClick={() => navigate(currNavPath)}>
       <img src={logo} alt="logo" />
@@ -175,60 +140,36 @@ export default function Header(props) {
   const tbasNavLinks = [
     <NavLinks key = {1}>
       <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[0])}>{currInfo.links[0]}</NavLink>
-      {coursesDropdown}
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[3])}>{currInfo.links[4]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[4])}>{currInfo.links[5]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[5])}>{currInfo.links[6]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[6])}>{currInfo.links[7]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[7])}>{currInfo.links[8]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[1])}>{currInfo.links[1]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[2])}>{currInfo.links[2]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[3])}>{currInfo.links[3]}</NavLink>
     </NavLinks>,
     <NavLinks key={2}>
-      <PrimaryLink onClick={() => navigate(currNavPath+currInfo.endpoints[8])}>
+      <PrimaryLink onClick={() => navigate(currNavPath+currInfo.endpoints[4])}>
         <EmailIcon tw="w-6 h-6 inline mr-4" />
-        {currInfo.links[9]}
+        {currInfo.links[4]}
       </PrimaryLink>
     </NavLinks>
   ];
   const tbasMobileNavLinks = [
     <NavLinks key = {1}>
       <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[0])}>{currInfo.links[0]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[1])}>{currInfo.links[2]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[2])}>{currInfo.links[3]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[3])}>{currInfo.links[4]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[4])}>{currInfo.links[5]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[5])}>{currInfo.links[6]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[6])}>{currInfo.links[7]}</NavLink>
-      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[7])}>{currInfo.links[8]}</NavLink>
-
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[1])}>{currInfo.links[1]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[2])}>{currInfo.links[2]}</NavLink>
+      <NavLink onClick={() => navigate(currNavPath+currInfo.endpoints[3])}>{currInfo.links[3]}</NavLink>
     </NavLinks>,
     <NavLinks key={2}>
-      <PrimaryLink onClick={() => navigate(currNavPath+currInfo.endpoints[8])}>
-        {currInfo.links[9]}
+      <PrimaryLink onClick={() => navigate(currNavPath+currInfo.endpoints[4])}>
+        {currInfo.links[4]}
       </PrimaryLink>
     </NavLinks>
   ];
 
   return (
     <HeaderComponent>
-      <LgDesktopNav css={collapseBreakPointCssMap['lg'].desktopNavLinks}>
-        {props.language === "JP" ? globeLinkJap : globeLinkEng}
-        <DesktopNavLinks>
-          {tbasLogoLink}
-          {tbasNavLinks}
-        </DesktopNavLinks>
-      </LgDesktopNav>
-
-      <MobileNavLinksContainer css={collapseBreakPointCssMap['lg'].mobileNavLinksContainer}>
+      <DesktopNavLinks>
         {tbasLogoLink}
-        <MobileNavLinks initial={{ x: "150%", display: "none" }} animate={animation} css={collapseBreakPointCssMap['lg'].mobileNavLinks}>
-          {tbasMobileNavLinks}
-          <br/>
-          {props.language === "JP" ? globeLinkJap : globeLinkEng}
-        </MobileNavLinks>
-        <NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
-          {showNavLinks ? <CloseIcon tw="w-6 h-6" /> : <MenuIcon tw="w-6 h-6" />}
-        </NavToggle>
-      </MobileNavLinksContainer>
+      </DesktopNavLinks>
     </HeaderComponent>
   );
 };

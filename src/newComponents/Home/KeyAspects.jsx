@@ -6,33 +6,34 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 /* ========= importing assets ============ */
 import {
     MainHeading as MainHeadingTemplate,
-    SubMainHeading as SubMainHeadingTemplate,
-    MainParagraph3 as MainParagraphTemplate,
+    MainHeading2 as SubMainHeadingTemplate,
+    MainParagraph as MainParagraphTemplate,
+    MainParagraph4 as DescriptionTemplate,
     ContentFormatted2 as RowTemplate
   } from "assets/styles/TailwindComponents.jsx";
 
 import { home_keyAspects } from "assets/tbas-data/TBas_Info.jsx";
 
-const Container = tw(RowTemplate)`py-16`;
-const Wrapper = tw.div`md:divide-y`;
-const Row = tw(RowTemplate)`flex flex-col md:flex-row justify-between items-center 
-mb-12 lg:mb-32 mx-auto md:h-112`;
+const Container = tw(RowTemplate)`pt-12 lg:py-16 divide-y`;
+const RowConfig= tw(RowTemplate)`flex flex-col md:flex-row justify-between items-center`;
+const InnerRow = tw(RowConfig)`flex-row lg:w-1/2 px-8 lg:px-0 mb-12 lg:mb-32 mx-auto h-104 lg:h-160`;
+const Row = tw(RowConfig)`md:divide-x`;
 
-const TextColumn = tw.div`w-3/5 md:w-1/2 h-full flex flex-col md:pl-20 md:pl-24 lg:pl-16`;
+const TextColumn = tw.div`w-1/16 h-full flex flex-col lg:px-12 items-center`;
 
-const MainHeading = tw(MainHeadingTemplate)`tracking-widest text-tbasMain-purple900 font-extrabold`;
+const MainHeading = tw(MainHeadingTemplate)`tracking-widest text-tbasMain-blue700 font-extrabold`;
 const HeadingInfoContainer = tw.div`flex flex-col items-center pb-8`;
 
-const Heading = tw(SubMainHeadingTemplate)`text-left text-tbasMain-purple900 tracking-widest pt-8`;
-const Description = tw(MainParagraphTemplate)`mt-4 text-main-black font-light 
-lg:max-w-lg`;
+const Heading = tw(MainHeadingTemplate)`text-center text-tbasMain-blue700 tracking-widest pt-8`;
+const Description = tw(DescriptionTemplate)`mt-4 text-main-black font-light lg:max-w-lg`;
+const SubDescription = tw(MainParagraphTemplate)`[writing-mode:vertical-rl] mt-4 text-main-black font-light lg:max-w-lg`;
 
-const KeyNumber = tw.h1`text-8xl sm:text-9xl md:text-3xxl lg:text-8xxl xl:text-10xxl font-YuGothic font-extrabold tracking-widest text-tbasMain-orange`;
-
-const ImageColumn = tw.div`w-full md:w-1/2 h-40 md:h-full flex flex-col items-center justify-center mt-8 lg:mt-12 md:px-8 lg:px-12 xl:px-24`;
+const ImageColumn = tw.div`w-15/16 h-full flex flex-col items-center justify-center mt-8 lg:mt-12 pl-4 lg:pl-0`;
+const ImageContainer = tw.div`w-full h-3/4`;
+const TextContainer = tw.div`md:px-12 w-full md:h-1/4 text-left`;
 const Image = styled.div(props => [
   `background-image: url("${props.imageSrc}");`,
-  tw`bg-contain bg-no-repeat bg-center object-center m-auto w-full h-full rounded-r-3xl`
+  tw`bg-contain bg-no-repeat bg-center object-center m-auto w-full h-full`
 ]);
 
 var currInfo = home_keyAspects[0];
@@ -47,25 +48,24 @@ export default function KeyAspects(props) {
       <HeadingInfoContainer>
         <MainHeading>{currInfo.Heading}</MainHeading>
       </HeadingInfoContainer>
-      <Wrapper>
+      <Row>
         {currInfo.KeyAspects.map((keyaspect, index) => (
-          <Row key={index}>
+          <InnerRow>
             <TextColumn>
-              {index !== 1 ? <KeyNumber>0{index + 1}</KeyNumber>: <KeyNumber tw="text-tbasMain-lightBlue">0{index + 1}</KeyNumber>}
-              <Heading>{keyaspect.SubHeading}</Heading>
-              <Description>{keyaspect.Description}</Description>
+              <Heading>{index + 1}</Heading>
+              <SubDescription>{keyaspect.SubHeading}</SubDescription>
             </TextColumn>
-            {index !== 1 ? 
-              <ImageColumn>
+            <ImageColumn>
+              <ImageContainer>
                 <Image imageSrc={keyaspect.ImageUrl} />
-              </ImageColumn>
-              : <ImageColumn tw="md:px-12 lg:px-20 xl:px-32">
-                <Image imageSrc={keyaspect.ImageUrl} />
-              </ImageColumn>
-            }
-          </Row>
+              </ImageContainer>
+              <TextContainer>
+                <Description>{keyaspect.Description}</Description>
+              </TextContainer>
+            </ImageColumn>
+          </InnerRow>
         ))}
-      </Wrapper>
+      </Row>
     </Container>
   );
 };
