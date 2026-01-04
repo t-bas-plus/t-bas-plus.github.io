@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.2d7da8bd.js",
+    "main.js": "/static/js/main.a2d0f744.js",
     "static/media/classroom.png": "/static/media/classroom.3f3d124c1c6239c4d7fc.png",
     "static/media/online-2.jpeg": "/static/media/online-2.0d1071d0f928ab22a21b.jpeg",
     "static/media/classroom-2.jpg": "/static/media/classroom-2.efee47a806fa750d4bcf.jpg",
@@ -28,9 +28,9 @@
     "static/media/teach-1.jpeg": "/static/media/teach-1.f00ccf59980588295f04.jpeg",
     "static/media/stressed-lady.svg": "/static/media/stressed-lady.a63398bd6385b2e331ecd36599974800.svg",
     "static/media/background-image-1.png": "/static/media/background-image-1.70ee18ffd67fdb6ecc55.png",
-    "static/media/TBAS-purple-logo.svg": "/static/media/TBAS-purple-logo.fc7f301df52b2c3e666623bcfae74a41.svg",
-    "static/media/TBAS-white-logo.svg": "/static/media/TBAS-white-logo.090f633e522df311d7d4d3121bbd1c4d.svg",
     "static/media/Line_logo.png": "/static/media/Line_logo.67827b44dd43fca756f0.png",
+    "static/media/TBAS-PLUS-LOGO.svg": "/static/media/TBAS-PLUS-LOGO.c70cba3029175c93305131bc6f4b1a81.svg",
+    "static/media/TBAS-PLUS-LOGO2.svg": "/static/media/TBAS-PLUS-LOGO2.ccaee2b944adaef0cd9bdbe358d12740.svg",
     "static/media/line_apply_qr.png": "/static/media/line_apply_qr.a60c8f91f0d54862a41f.png",
     "static/media/line_contact_qr.png": "/static/media/line_contact_qr.f3e69d2a3e61ddb8c0e1.png",
     "static/media/HP_02.svg": "/static/media/HP_02.2a6da612259c488065610578a3ac85b9.svg",
@@ -53,9 +53,9 @@
     "static/media/x.svg": "/static/media/x.6c9a4ba71a333be7b021fc6da39d864c.svg",
     "static/media/chevron-down.svg": "/static/media/chevron-down.c3e123cf78bc368a192f3e2dee97daba.svg",
     "static/media/check.svg": "/static/media/check.a6151888542feae6b5840a95a69ed0b8.svg",
-    "main.2d7da8bd.js.map": "/static/js/main.2d7da8bd.js.map"
+    "main.a2d0f744.js.map": "/static/js/main.a2d0f744.js.map"
   },
   "entrypoints": [
-    "static/js/main.2d7da8bd.js"
+    "static/js/main.a2d0f744.js"
   ]
 }
