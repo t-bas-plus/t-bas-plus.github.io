@@ -8,7 +8,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { ContentWithVerticalPadding as ContainerBase
 } from "assets/styles/TailwindComponents.jsx";
 
-import logo from "assets/tbas-images/logo/TBAS-white-logo.svg";
+import logo from "assets/tbas-images/logo/TBAS-PLUS-LOGO2.svg";
 import { header_footer } from "assets/tbas-data/TBas_Info.jsx";
 
 

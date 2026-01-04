@@ -8,7 +8,7 @@ import useAnimatedNavToggler from "helpers/useAnimatedNavToggler.js";
 
 import { useNavigate, useLocation } from 'react-router-dom';
 
-import logo from "assets/tbas-images/logo/TBAS-purple-logo.svg";
+import logo from "assets/tbas-images/logo/TBAS-PLUS-LOGO.svg";
 
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
