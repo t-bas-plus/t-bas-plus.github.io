@@ -284,21 +284,43 @@ export const courseInfo = [
           "対面・日本語"
         ],
         PriceKeyNote: [
-          "土曜日（90分）",
-          "1部 13:00〜14:30 / 2部 15:00〜16:30",
+          "土曜日：1部 13:00〜14:30 / 2部 15:00〜16:30",
           "各回最大3名（1部または2部を選択）",
-          "入会金 11,000円 / 施設使用料 1,100円/月",
+          "入会金11,000円・施設使用料1,100円/月",
           "教材費無料"
         ],
         ImageUrl: mathPhoto,
         PriceTable: [
           {
-            stdPriceHeading: "月額（週1回 / 90分）",
+            stdPriceHeading: "月額",
+            stdPriceSubheading: "（週1回 / 90分）",
             stdPrice: "¥24,200"
           },
           {
             stdPriceHeading: "体験レッスン",
             stdPrice: "¥3,300"
+          }
+        ]
+      },
+      {
+        SubHeading: "IB学習・進路相談",
+        SubHeading2: "(玉川学園IB生・保護者向け)",
+        Features: [
+          "IB学習相談",
+          "科目選択",
+          "進路・大学相談"
+        ],
+        PriceKeyNote: [
+          "玉川学園IB生・保護者向け",
+          "教科指導は行っておりません",
+          "学習・進路に関する個別相談です"
+        ],
+        ImageUrl: highSchool,
+        PriceTable: [
+          {
+            stdPriceHeading: "45分",
+            stdPrice: "¥5,500",
+            stdPriceSuffix: "（税込）"
           }
         ]
       }

@@ -4,10 +4,10 @@ import styled from "styled-components";
 
 import {
   MainHeading as MainHeadingTemplate,
-  SubMainHeading as PlanHeadingTemplate,
-  SubMainHeading3 as PriceHeadingTemplate,
-  MainParagraph3 as MainParagraphTemplate,
-  MainParagraph4 as SmallParagraphTemplate,
+  MainHeading2 as PlanHeadingTemplate,
+  MainParagraph as MainParagraphTemplate,
+  MainParagraph2 as MainParagraph2Template,
+  SectionDescription as SectionDescriptionTemplate,
   Container as ContainerTemplate,
   ContentFormatted2
 } from "assets/styles/TailwindComponents.jsx";
@@ -35,9 +35,9 @@ const HeroContainer = styled(ContentFormatted2)(tw`relative`);
 const HeaderContainer = tw.div`flex flex-col items-center w-full pt-10 pb-8 lg:pt-16 lg:pb-12`;
 const MainHeading = tw(MainHeadingTemplate)`w-full tracking-widest text-center text-main-white`;
 
-const PlansContainer = tw.div`relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8`;
+const PlansContainer = tw.div`relative grid grid-cols-1 gap-10 md:grid-cols-2`;
 const Plan = tw.article`flex flex-col w-full min-w-0 overflow-hidden text-center bg-white shadow rounded-2xl text-main-black`;
-const ImageContainer = tw.div`w-full h-48 lg:h-56`;
+const ImageContainer = tw.div`w-full h-48 lg:h-64`;
 const Image = styled.div(props => [
   `background-image: url("${props.imageSrc}");`,
   tw`w-full h-full bg-center bg-no-repeat bg-cover`
@@ -45,23 +45,26 @@ const Image = styled.div(props => [
 
 const TextContainer = tw.div`flex flex-col flex-1 p-5 sm:p-6`;
 const HeadingContainer = tw.div`flex flex-col items-center justify-center h-32 mb-4`;
-const PlanHeader = tw(PlanHeadingTemplate)`w-full font-bold leading-tight tracking-wide text-center whitespace-nowrap md:text-5xl lg:text-5xl xl:text-7xl`;
+const PlanHeader = tw(PlanHeadingTemplate)`w-full font-bold leading-tight tracking-wide text-center`;
 const SubHeader = tw(MainParagraphTemplate)`block min-h-6 mt-2 font-normal tracking-normal text-center`;
 
-const FeatureTextContainer = tw.div`grid items-center w-full h-16 grid-cols-3 gap-2 mb-6`;
-const Label = tw.span`flex items-center justify-center w-full h-10 px-1 font-normal leading-none text-center whitespace-nowrap rounded-sm text-xs sm:text-sm xl:text-base bg-tbasMain-blue500 text-main-white`;
+const FeatureTextContainer = tw.div`grid items-center w-full h-20 grid-cols-3 gap-3 mb-6`;
+const Label = tw.span`flex items-center justify-center w-full h-12 px-2 font-light leading-snug text-center rounded-sm text-sm md:text-base lg:text-lg xl:text-xl bg-tbasMain-blue500 text-main-white`;
 
 const PriceTable = tw.div`flex flex-col w-full mt-auto overflow-hidden border border-black`;
 const PriceHeadingContainer = tw.div`flex items-center w-full h-48 px-4 py-3`;
-const PriceKeyNote = tw.div`w-full font-medium leading-relaxed text-left text-sm xl:text-base text-tbasMain-red900`;
+const PriceKeyNote = tw(SectionDescriptionTemplate)`w-full max-w-full mt-0 text-left text-tbasMain-red900`;
 const PriceNote = tw.div`flex items-start w-full`;
 const PriceNoteMarker = tw.span`flex-shrink-0 mr-1`;
 const PriceNoteText = tw.span`min-w-0`;
 
 const CourseColumnContainer = tw.div`flex w-full h-32 border-t border-black`;
-const CourseColumn = tw.div`flex flex-col justify-center w-1/2 min-w-0 px-2 py-4 text-center first:border-r first:border-black`;
-const CourseDescription = tw(MainParagraphTemplate)`font-medium leading-snug text-center text-tbasMain-blue500`;
-const CostHeading = tw(PriceHeadingTemplate)`w-full mt-2 font-bold leading-none text-center`;
+const CourseColumn = tw.div`flex flex-col justify-center flex-1 min-w-0 px-2 py-4 text-center first:border-r first:border-black`;
+const CourseHeadingContainer = tw.div`flex flex-col items-center justify-center min-h-10`;
+const CourseDescription = tw(MainParagraph2Template)`font-medium leading-snug text-center text-tbasMain-blue500`;
+const CourseSubDescription = tw.span`block min-h-4 mt-1 text-xs font-normal leading-none text-center sm:text-sm text-tbasMain-blue500`;
+const CostHeading = tw(PlanHeadingTemplate)`w-full mt-2 font-bold leading-none text-center`;
+const CostSuffix = tw.span`ml-1 text-sm font-normal sm:text-base`;
 
 export default function CoursePlans (props){
   const currInfo = props.language === "ENG" ? courseInfo[1] : courseInfo[0];
@@ -102,8 +105,16 @@ export default function CoursePlans (props){
                   <CourseColumnContainer>
                     {plan.PriceTable.map((price, priceIndex) => (
                       <CourseColumn key={priceIndex}>
-                        <CourseDescription>{price.stdPriceHeading}</CourseDescription>
-                        <CostHeading>{price.stdPrice}</CostHeading>
+                        <CourseHeadingContainer>
+                          <CourseDescription>{price.stdPriceHeading}</CourseDescription>
+                          <CourseSubDescription>
+                            {price.stdPriceSubheading || "\u00A0"}
+                          </CourseSubDescription>
+                        </CourseHeadingContainer>
+                        <CostHeading>
+                          {price.stdPrice}
+                          {price.stdPriceSuffix && <CostSuffix>{price.stdPriceSuffix}</CostSuffix>}
+                        </CostHeading>
                       </CourseColumn>
                     ))}
                   </CourseColumnContainer>
