@@ -1,88 +1,67 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
-import { useNavigate } from 'react-router-dom';
 
-/* ========= importing assets ============ */
 import {
-    MainHeading as MainHeadingTemplate,
-    MainHeading2 as SubMainHeadingTemplate,
-    MainParagraph as MainParagraphTemplate,
-    MainParagraph2 as MainParagraph2Template,
-    SubMainHeading as MainHeading2Template,
-    PrimaryButton as PrimaryButtonBase,
-    SectionDescription as SectionDescriptionBase,
-
-    Container as ContainerTemplate,
-    ContentFormatted2
-  } from "assets/styles/TailwindComponents.jsx";
+  MainHeading as MainHeadingTemplate,
+  Container as ContainerTemplate,
+  ContentFormatted2
+} from "assets/styles/TailwindComponents.jsx";
 import { courseInfo } from "assets/tbas-data/TBas_Info.jsx";
-
-import { ReactComponent as CheckIcon } from "feather-icons/dist/icons/check.svg";
-import { ReactComponent as ArrowIcon } from "feather-icons/dist/icons/arrow-right-circle.svg";
 
 import background from "assets/tbas-images/background/background-image-2.png";
 
 const Container = styled(ContainerTemplate)(props => [
-  tw`relative px-8 bg-gradient-to-t from-main-white to-tbasMain-blue700 bg-no-repeat w-full h-auto lg:h-272`,
-  `&::before{`
-    + `content: "";`
-    + `position: absolute;`
-    + `inset: 0;`
-    + `background-image: url("${props.imageSrc}");`
-    + `background-repeat: no-repeat;`
-    + `background-size: cover;`
-    + `background-position: center;`
-    + `opacity: 0.2;`
-    + `z-index: 0;`
-  + `}`,
+  tw`relative w-full h-auto px-4 pb-16 bg-gradient-to-t from-main-white to-tbasMain-blue700 bg-no-repeat sm:px-6 lg:px-8`,
+  `&::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("${props.imageSrc}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+  }`,
   `& > * { position: relative; z-index: 10; }`
 ]);
 
-const HeroContainer = styled(ContentFormatted2)(tw`relative h-full pb-12 lg:pb-0`);
-
-const HeaderContainer = tw.div`w-full flex flex-col items-center pt-10 lg:pt-16 pb-6 lg:pb-12`;
+const HeroContainer = styled(ContentFormatted2)(tw`relative`);
+const HeaderContainer = tw.div`flex flex-col items-center w-full pt-10 pb-8 lg:pt-16 lg:pb-12`;
 const MainHeading = tw(MainHeadingTemplate)`w-full tracking-widest text-center text-main-white`;
 
-const PlansContainer = tw.div`flex flex-col md:flex-row justify-center items-center md:items-stretch relative space-y-6 md:space-y-0 md:space-x-6 lg:space-x-10 h-4/5`;
-
-const Plan = styled.div(({ item }) => [
-  tw`flex flex-col w-full h-auto md:flex-1 md:min-w-0
-  text-center rounded-2xl shadow relative 
-  text-main-black bg-white`
-]);
-const PlanHeader = styled(MainHeading2Template)(({ item }) => [
-  tw`font-bold tracking-widest w-full py-4 text-center`,
-]);
-const SubHeader = tw(MainParagraphTemplate)`inline-block`
-
-const FeatureTextContainer = tw.div`flex flex-row items-center justify-center flex-wrap mt-2 py-2`;
-const Label = tw.span`inline-block bg-tbasMain-blue500 text-main-white font-light text-sm md:text-base lg:text-lg xl:text-xl px-6 ml-4 mb-4 md:mb-0 rounded-sm`;
-
-const ImageContainer = tw.div`h-48 lg:h-1/3 w-full`;
-const TextContainer = tw.div`flex flex-col flex-1 items-center mt-8 lg:mt-4 mb-12 lg:mb-0 text-left`;
-
+const PlansContainer = tw.div`relative grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8`;
+const Plan = tw.article`flex flex-col w-full min-w-0 overflow-hidden text-center bg-white shadow rounded-2xl text-main-black`;
+const ImageContainer = tw.div`w-full h-48 lg:h-56`;
 const Image = styled.div(props => [
   `background-image: url("${props.imageSrc}");`,
-  tw`bg-cover bg-no-repeat bg-center object-center object-fill m-auto h-full w-full rounded-t-2xl`
+  tw`w-full h-full bg-center bg-no-repeat bg-cover`
 ]);
 
-const PriceTable = tw.div`flex flex-col w-5/6 mt-auto md:mb-6 border border-black`;
-const PriceHeadingContainer = tw.div`w-full text-center py-4`
-const PriceKeyNote = tw(SectionDescriptionBase)`text-tbasMain-red900 text-left px-2 lg:pl-6 items-center`;
+const TextContainer = tw.div`flex flex-col flex-1 p-5 sm:p-6`;
+const HeadingContainer = tw.div`flex flex-col items-center justify-center min-h-20 mb-4`;
+const PlanHeader = tw.h3`w-full font-serif text-xl font-bold leading-tight tracking-wide text-center lg:text-2xl`;
+const SubHeader = tw.span`block mt-1 font-serif text-sm font-normal tracking-normal lg:text-base`;
 
-const CourseColumnContainer = tw.div`flex flex-col md:flex-row w-full`;
-const CourseColumn = tw.div`flex flex-col md:w-1/3 text-center p-4 border-black`;
-const CostHeading = tw(SubMainHeadingTemplate)`font-bold w-full text-center md:text-left`;
-const CourseDescription = tw(MainParagraph2Template)`inline-block text-center md:text-left text-tbasMain-blue500 font-medium lg:mt-6`;
-const PriceCourseDescription = tw(CourseDescription)`inline-block text-main-black font-light mt-0 text-center md:text-left`;
+const FeatureTextContainer = tw.div`grid w-full grid-cols-1 gap-2 mb-6`;
+const Label = tw.span`block w-full px-3 py-2 text-sm font-light leading-snug rounded-sm bg-tbasMain-blue500 text-main-white`;
+
+const PriceTable = tw.div`flex flex-col w-full mt-auto overflow-hidden border border-black`;
+const PriceHeadingContainer = tw.div`flex items-center w-full min-h-24 px-4 py-3`;
+const PriceKeyNote = tw.div`w-full text-xs leading-relaxed text-left break-words text-tbasMain-red900`;
+const PriceNote = tw.p`m-0`;
+
+const CourseColumnContainer = tw.div`flex w-full border-t border-black`;
+const CourseColumn = tw.div`flex flex-col justify-center w-1/2 min-w-0 px-2 py-4 text-center first:border-r first:border-black`;
+const CourseDescription = tw.p`min-h-10 text-xs font-medium leading-snug text-center text-tbasMain-blue500 sm:text-sm`;
+const CostHeading = tw.p`w-full mt-2 font-serif text-lg font-bold leading-none text-center sm:text-xl`;
 
 export default function CoursePlans (props){
   const currInfo = props.language === "ENG" ? courseInfo[1] : courseInfo[0];
 
   return (
-    <Container imageSrc={background} >
+    <Container imageSrc={background}>
       <HeroContainer>
         <HeaderContainer>
           <MainHeading>{currInfo.Heading}</MainHeading>
@@ -94,51 +73,32 @@ export default function CoursePlans (props){
                 <Image imageSrc={plan.ImageUrl} />
               </ImageContainer>
               <TextContainer>
-                <PlanHeader item={index}>
-                  {plan.SubHeading}
-                  <SubHeader>{plan.SubHeading2}</SubHeader>
-                </PlanHeader>
+                <HeadingContainer>
+                  <PlanHeader>
+                    {plan.SubHeading}
+                    {plan.SubHeading2 && <SubHeader>{plan.SubHeading2}</SubHeader>}
+                  </PlanHeader>
+                </HeadingContainer>
                 <FeatureTextContainer>
-                  {plan.Features.map((feature, index) => (
-                    <Label key={index}>{feature}</Label>
+                  {plan.Features.map((feature, featureIndex) => (
+                    <Label key={featureIndex}>{feature}</Label>
                   ))}
                 </FeatureTextContainer>
                 <PriceTable>
                   <PriceHeadingContainer>
-                    {/* <PlanHeader>
-                      {currInfo.PriceHeading}
-                    </PlanHeader> */}
-                    <PriceKeyNote >
+                    <PriceKeyNote>
                       {(plan.PriceKeyNote || currInfo.PriceKeyNote).map((note, noteIndex) => (
-                        <React.Fragment key={noteIndex}>
-                          {note}<br/>
-                        </React.Fragment>
+                        <PriceNote key={noteIndex}>{note}</PriceNote>
                       ))}
                     </PriceKeyNote>
                   </PriceHeadingContainer>
                   <CourseColumnContainer>
-                    <CourseColumn tw="md:w-1/2 md:border-r border-t">
-                      <CourseDescription>
-                        {plan.PriceTable[0].stdPriceHeading}
-                      </CourseDescription>
-                      <CostHeading>
-                        {plan.PriceTable[0].stdPrice}
-                        {/* <PriceCourseDescription>
-                        {faq.onlineTable.priceSuffix}
-                        </PriceCourseDescription> */}
-                      </CostHeading>
-                    </CourseColumn>
-                    <CourseColumn tw="md:w-1/2 border-t">
-                      <CourseDescription>
-                        {plan.PriceTable[1].stdPriceHeading}
-                      </CourseDescription>
-                     <CostHeading>
-                        {plan.PriceTable[1].stdPrice}
-                        {/* <PriceCourseDescription>
-                        {faq.onlineTable.priceSuffix}
-                        </PriceCourseDescription> */}
-                      </CostHeading>
-                    </CourseColumn>
+                    {plan.PriceTable.map((price, priceIndex) => (
+                      <CourseColumn key={priceIndex}>
+                        <CourseDescription>{price.stdPriceHeading}</CourseDescription>
+                        <CostHeading>{price.stdPrice}</CostHeading>
+                      </CourseColumn>
+                    ))}
                   </CourseColumnContainer>
                 </PriceTable>
               </TextContainer>
@@ -148,4 +108,4 @@ export default function CoursePlans (props){
       </HeroContainer>
     </Container>
   );
-};
+}

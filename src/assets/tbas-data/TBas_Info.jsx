@@ -7,6 +7,7 @@ import teachImage2 from "assets/tbas-images/home/teach-2.png";
 
 import highSchool from "assets/tbas-images/home/textbook-1.png";
 import middleSchool from "assets/tbas-images/home/textbook-2.png";
+import mathPhoto from "assets/tbas-images/background/math-photo.png";
 
 import skill1 from "assets/tbas-images/home/HP_01.svg";
 import skill2 from "assets/tbas-images/home/HP_02.svg";
@@ -287,7 +288,7 @@ export const courseInfo = [
           "※各回最大3名。1部または2部を選択",
           "※入会金11,000円・施設使用料1,100円/月・教材費無料"
         ],
-        ImageUrl: middleSchool,
+        ImageUrl: mathPhoto,
         PriceTable: [
           {
             stdPriceHeading: "月額（週1回 / 90分）",
