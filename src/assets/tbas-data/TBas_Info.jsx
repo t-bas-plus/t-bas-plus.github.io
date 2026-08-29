@@ -280,7 +280,7 @@ export const courseInfo = [
         SubHeading2: "(MYP 7〜10年生)",
         Features: [
           "基礎力の定着",
-          "最大3名の少人数制",
+          "最大3名",
           "対面・日本語"
         ],
         PriceKeyNote: [

@@ -4,11 +4,10 @@ import styled from "styled-components";
 
 import {
   MainHeading as MainHeadingTemplate,
-  MainHeading2 as PlanHeadingTemplate,
-  MainParagraph as MainParagraphTemplate,
-  MainParagraph2 as MainParagraph2Template,
-  SubMainHeading2 as PriceHeadingTemplate,
-  SectionDescription as SectionDescriptionTemplate,
+  SubMainHeading as PlanHeadingTemplate,
+  SubMainHeading3 as PriceHeadingTemplate,
+  MainParagraph3 as MainParagraphTemplate,
+  MainParagraph4 as SmallParagraphTemplate,
   Container as ContainerTemplate,
   ContentFormatted2
 } from "assets/styles/TailwindComponents.jsx";
@@ -45,21 +44,21 @@ const Image = styled.div(props => [
 ]);
 
 const TextContainer = tw.div`flex flex-col flex-1 p-5 sm:p-6`;
-const HeadingContainer = tw.div`flex flex-col items-center justify-center min-h-20 mb-4`;
-const PlanHeader = tw(PlanHeadingTemplate)`w-full font-bold leading-tight tracking-wide text-center`;
-const SubHeader = tw(MainParagraphTemplate)`inline-block ml-1 font-normal tracking-normal`;
+const HeadingContainer = tw.div`flex flex-col items-center justify-center h-32 mb-4`;
+const PlanHeader = tw(PlanHeadingTemplate)`w-full font-bold leading-tight tracking-wide text-center md:text-3xl lg:text-7xl xl:text-10xl`;
+const SubHeader = tw(MainParagraphTemplate)`block min-h-6 mt-2 font-normal tracking-normal text-center`;
 
-const FeatureTextContainer = tw.div`grid w-full grid-cols-3 gap-2 mb-6`;
-const Label = tw.span`flex items-center justify-center w-full px-2 py-1 font-light leading-snug text-center rounded-sm text-sm md:text-base lg:text-lg xl:text-xl bg-tbasMain-blue500 text-main-white`;
+const FeatureTextContainer = tw.div`grid items-center w-full h-20 grid-cols-3 gap-2 mb-6`;
+const Label = tw(SmallParagraphTemplate)`flex items-center justify-center w-full h-12 px-1 font-light leading-snug text-center rounded-sm bg-tbasMain-blue500 text-main-white`;
 
 const PriceTable = tw.div`flex flex-col w-full mt-auto overflow-hidden border border-black`;
-const PriceHeadingContainer = tw.div`flex items-center w-full min-h-24 px-4 py-3`;
-const PriceKeyNote = tw(SectionDescriptionTemplate)`w-full max-w-full mt-0 text-left break-words text-tbasMain-red900`;
+const PriceHeadingContainer = tw.div`flex items-center w-full min-h-40 px-4 py-3 md:h-64 lg:h-56 xl:h-48`;
+const PriceKeyNote = tw(SmallParagraphTemplate)`w-full font-medium leading-relaxed text-left break-words text-tbasMain-red900`;
 const PriceNote = tw.p`m-0`;
 
-const CourseColumnContainer = tw.div`flex w-full border-t border-black`;
+const CourseColumnContainer = tw.div`flex w-full h-32 border-t border-black md:h-40 lg:h-32`;
 const CourseColumn = tw.div`flex flex-col justify-center w-1/2 min-w-0 px-2 py-4 text-center first:border-r first:border-black`;
-const CourseDescription = tw(MainParagraph2Template)`min-h-10 font-medium leading-snug text-center text-tbasMain-blue500`;
+const CourseDescription = tw(MainParagraphTemplate)`font-medium leading-snug text-center text-tbasMain-blue500`;
 const CostHeading = tw(PriceHeadingTemplate)`w-full mt-2 font-bold leading-none text-center`;
 
 export default function CoursePlans (props){
@@ -79,10 +78,8 @@ export default function CoursePlans (props){
               </ImageContainer>
               <TextContainer>
                 <HeadingContainer>
-                  <PlanHeader>
-                    {plan.SubHeading}
-                    {plan.SubHeading2 && <SubHeader>{plan.SubHeading2}</SubHeader>}
-                  </PlanHeader>
+                  <PlanHeader>{plan.SubHeading}</PlanHeader>
+                  <SubHeader>{plan.SubHeading2 || "\u00A0"}</SubHeader>
                 </HeadingContainer>
                 <FeatureTextContainer>
                   {plan.Features.map((feature, featureIndex) => (
