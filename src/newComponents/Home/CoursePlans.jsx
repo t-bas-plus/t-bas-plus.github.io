@@ -41,21 +41,21 @@ const Image = styled.div(props => [
 
 const TextContainer = tw.div`flex flex-col flex-1 p-5 sm:p-6`;
 const HeadingContainer = tw.div`flex flex-col items-center justify-center min-h-20 mb-4`;
-const PlanHeader = tw.h3`w-full font-serif text-xl font-bold leading-tight tracking-wide text-center lg:text-2xl`;
-const SubHeader = tw.span`block mt-1 font-serif text-sm font-normal tracking-normal lg:text-base`;
+const PlanHeader = tw.h3`w-full font-serif font-bold leading-tight tracking-wide text-center text-5xl md:text-5xl lg:text-7xl xl:text-9xl`;
+const SubHeader = tw.span`inline-block ml-1 font-serif font-normal tracking-normal text-lg lg:text-xl xl:text-3xl`;
 
-const FeatureTextContainer = tw.div`grid w-full grid-cols-1 gap-2 mb-6`;
-const Label = tw.span`block w-full px-3 py-2 text-sm font-light leading-snug rounded-sm bg-tbasMain-blue500 text-main-white`;
+const FeatureTextContainer = tw.div`grid w-full grid-cols-3 gap-2 mb-6`;
+const Label = tw.span`flex items-center justify-center w-full px-1 py-1 font-light leading-snug text-center rounded-sm text-xs lg:text-sm xl:text-base bg-tbasMain-blue500 text-main-white`;
 
 const PriceTable = tw.div`flex flex-col w-full mt-auto overflow-hidden border border-black`;
 const PriceHeadingContainer = tw.div`flex items-center w-full min-h-24 px-4 py-3`;
-const PriceKeyNote = tw.div`w-full text-xs leading-relaxed text-left break-words text-tbasMain-red900`;
+const PriceKeyNote = tw.div`w-full font-medium leading-relaxed text-left break-words text-xs lg:text-sm xl:text-lg text-tbasMain-red900`;
 const PriceNote = tw.p`m-0`;
 
 const CourseColumnContainer = tw.div`flex w-full border-t border-black`;
 const CourseColumn = tw.div`flex flex-col justify-center w-1/2 min-w-0 px-2 py-4 text-center first:border-r first:border-black`;
-const CourseDescription = tw.p`min-h-10 text-xs font-medium leading-snug text-center text-tbasMain-blue500 sm:text-sm`;
-const CostHeading = tw.p`w-full mt-2 font-serif text-lg font-bold leading-none text-center sm:text-xl`;
+const CourseDescription = tw.p`min-h-10 font-medium leading-snug text-center text-sm lg:text-base xl:text-lg text-tbasMain-blue500`;
+const CostHeading = tw.p`w-full mt-2 font-serif font-bold leading-none text-center text-3xl lg:text-4xl xl:text-5xl`;
 
 export default function CoursePlans (props){
   const currInfo = props.language === "ENG" ? courseInfo[1] : courseInfo[0];
